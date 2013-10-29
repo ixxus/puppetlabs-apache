@@ -18,7 +18,7 @@
 #
 class apache::service (
   $service_enable = true,
-  $service_ensure = 'running',
+  $service_ensure = 'running'
 ) {
   validate_bool($service_enable)
 

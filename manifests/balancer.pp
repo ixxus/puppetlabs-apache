@@ -40,7 +40,7 @@
 #
 define apache::balancer (
   $proxy_set = {},
-  $collect_exported = true,
+  $collect_exported = true
 ) {
   include concat::setup
   include apache::mod::proxy_balancer

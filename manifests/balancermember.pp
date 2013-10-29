@@ -42,7 +42,7 @@
 define apache::balancermember(
   $balancer_cluster,
   $url = "http://${::fqdn}/",
-  $options = [],
+  $options = []
 ) {
 
   concat::fragment { "BalancerMember ${url}":
