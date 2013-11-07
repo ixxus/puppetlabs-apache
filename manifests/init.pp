@@ -64,7 +64,8 @@ class apache (
   if $mpm_module {
     validate_re($mpm_module, '(prefork|worker|itk)')
   }
-  validate_re($sendfile, [ '^[oO]n$' , '^[oO]ff$' ])
+  $sendfile_options = [ '^[oO]n$' , '^[oO]ff$' ]
+  validate_re($sendfile, $sendfile_options)
 
   # declare the web server user and group
   # Note: requiring the package means the package ought to create them and not puppet
