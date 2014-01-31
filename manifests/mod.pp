@@ -32,11 +32,13 @@ define apache::mod (
     $package_REAL = $mod_package
   }
   if $package_REAL {
-    # $package_REAL may be an array
-    package { $package_REAL:
-      ensure  => $package_ensure,
-      require => Package['httpd'],
-      before  => File["${mod_dir}/${mod}.load"],
+    if ! defined(Package[$package_REAL]) {
+      # $package_REAL may be an array
+      package { $package_REAL:
+        ensure  => $package_ensure,
+        require => Package['httpd'],
+        before  => File["${mod_dir}/${mod}.load"],
+      }
     }
   }
 
