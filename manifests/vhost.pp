@@ -105,6 +105,7 @@ define apache::vhost(
     $scriptalias                 = undef,
     $proxy_dest                  = undef,
     $proxy_pass                  = undef,
+    $proxypass_options           = undef,
     $sslproxyengine              = false,
     $suphp_addhandler            = $apache::params::suphp_addhandler,
     $suphp_engine                = $apache::params::suphp_engine,
