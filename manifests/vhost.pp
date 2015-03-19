@@ -60,6 +60,7 @@ define apache::vhost(
   $proxy_dest_match            = undef,
   $proxy_dest_reverse_match    = undef,
   $proxy_pass                  = undef,
+  $proxypass_options           = undef,
   $proxy_pass_match            = undef,
   $suphp_addhandler            = $::apache::params::suphp_addhandler,
   $suphp_engine                = $::apache::params::suphp_engine,
